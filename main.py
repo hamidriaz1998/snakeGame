@@ -47,5 +47,10 @@ while isGameOn:
         isGameOn = False
         scoreBoard.gameOver()
 
+    # Detect collsions with segments
+    if any(map(lambda i: snake.head.distance(i) < 10, snake.segments[1:])):
+        isGameOn = False
+        scoreBoard.gameOver()
+
 
 screen.exitonclick()
