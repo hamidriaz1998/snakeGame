@@ -33,6 +33,7 @@ while isGameOn:
     # Detect collsion with bonus pill
     if snake.head.distance(bonus) < 15:
         bonus.placeBonus()
+        snake.addSegment()
         scoreBoard.incrementScore()
         scoreBoard.printScore()
 
