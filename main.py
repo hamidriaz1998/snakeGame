@@ -33,16 +33,16 @@ while isGameOn:
     # Detect collsion with bonus pill
     if snake.head.distance(bonus) < 15:
         bonus.placeBonus()
-        snake.addSegment()
+        snake.extendSnake()
         scoreBoard.incrementScore()
         scoreBoard.printScore()
 
     # Detect wall collsion
     if (
-        snake.head.ycor() > 280
-        or snake.head.ycor() < -280
-        or snake.head.xcor() > 280
-        or snake.head.xcor() < -280
+        snake.head.ycor() > 285
+        or snake.head.ycor() < -285
+        or snake.head.xcor() > 285
+        or snake.head.xcor() < -285
     ):
         isGameOn = False
         scoreBoard.gameOver()
