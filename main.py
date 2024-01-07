@@ -28,4 +28,7 @@ while gameOn:
     sleep(0.2)
     snake.move()
 
+    # Detect collsion with bonus pill
+    if snake.head.distance(bonus) < 15:
+        bonus.placeBonus()
 screen.exitonclick()
