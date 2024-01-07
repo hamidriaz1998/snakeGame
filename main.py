@@ -2,6 +2,7 @@ from turtle import Screen
 from time import sleep
 from snake import Snake
 from bonus import Bonus
+from scoreBoard import ScoreBoard
 
 # Set Screen parameters
 screen = Screen()
@@ -10,9 +11,10 @@ screen.setup(height=600, width=600)
 screen.tracer(0)
 screen.title("Snake")
 
-# Initialize Snake and bonus pill
+# Initialize Snake,bonus pill and ScoreBoard objects
 snake = Snake()
 bonus = Bonus()
+scoreBoard = ScoreBoard()
 
 # Listen for keystrokes
 screen.listen()
@@ -31,4 +33,5 @@ while gameOn:
     # Detect collsion with bonus pill
     if snake.head.distance(bonus) < 15:
         bonus.placeBonus()
+        scoreBoard.incrementScore()
 screen.exitonclick()
