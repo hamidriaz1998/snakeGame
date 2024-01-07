@@ -8,6 +8,7 @@ class Snake:
     def __init__(self):
         self.segments = []
         self.createSnake()
+        self.head = self.segments[0]
 
     def createSnake(self):
         for i in MOVEPOS:
@@ -21,16 +22,16 @@ class Snake:
         for segIdx in range(len(self.segments) - 1, 0, -1):
             x, y = self.segments[segIdx - 1].pos()
             self.segments[segIdx].goto(x, y)
-        self.segments[0].forward(MOVEDIS)
+        self.head.forward(MOVEDIS)
 
     def up(self):
-        self.segments[0].setheading(90)
+        self.head.setheading(90)
 
     def down(self):
-        self.segments[0].setheading(270)
+        self.head.setheading(270)
 
     def left(self):
-        self.segments[0].setheading(180)
+        self.head.setheading(180)
 
     def right(self):
-        self.segments[0].setheading(0)
+        self.head.setheading(0)
