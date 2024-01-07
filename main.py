@@ -24,8 +24,8 @@ screen.onkey(snake.left, "Left")
 screen.onkey(snake.right, "Right")
 
 # Game loop
-gameOn = True
-while gameOn:
+isGameOn = True
+while isGameOn:
     screen.update()
     sleep(0.1)
     snake.move()
@@ -35,4 +35,16 @@ while gameOn:
         bonus.placeBonus()
         scoreBoard.incrementScore()
         scoreBoard.printScore()
+
+    # Detect wall collsion
+    if (
+        snake.head.ycor() > 280
+        or snake.head.ycor() < -280
+        or snake.head.xcor() > 280
+        or snake.head.xcor() < -280
+    ):
+        isGameOn = False
+        scoreBoard.gameOver()
+
+
 screen.exitonclick()
