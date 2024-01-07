@@ -11,4 +11,9 @@ class ScoreBoard(Turtle):
         self.score += 1
 
     def printScore(self):
-        self.write(f"Score: {self.score}")
+        self.reset()
+        self.penup()
+        self.color("white")
+        self.goto(0, 280)
+        self.hideturtle()
+        self.write(f"Score: {self.score}", align="Center")
