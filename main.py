@@ -34,4 +34,5 @@ while gameOn:
     if snake.head.distance(bonus) < 15:
         bonus.placeBonus()
         scoreBoard.incrementScore()
+        scoreBoard.printScore()
 screen.exitonclick()
