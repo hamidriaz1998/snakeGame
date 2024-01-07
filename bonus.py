@@ -13,4 +13,7 @@ class Bonus(Turtle):
         self.shape("circle")
         self.color("green")
         self.speed("fastest")
+        self.placeBonus()
+
+    def placeBonus(self):
         self.goto(rand(*SCREENBORDERS), rand(*SCREENBORDERS))
