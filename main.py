@@ -27,7 +27,7 @@ screen.onkey(snake.right, "Right")
 gameOn = True
 while gameOn:
     screen.update()
-    sleep(0.2)
+    sleep(0.1)
     snake.move()
 
     # Detect collsion with bonus pill
